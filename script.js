@@ -15,3 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Please enter a task.');
             return;
         }
+
+        
+        // Step 5: Create list item and remove button
+        const li = document.createElement('li');
+        li.textContent = taskText;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Remove';
+        removeBtn.className = 'remove-btn';
+
+        // Step 6: Add functionality to remove button
+        removeBtn.onclick = function () {
+            taskList.removeChild(li);
+        };
