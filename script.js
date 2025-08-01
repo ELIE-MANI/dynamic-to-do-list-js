@@ -29,3 +29,22 @@ document.addEventListener('DOMContentLoaded', function () {
         removeBtn.onclick = function () {
             taskList.removeChild(li);
         };
+        
+        // Step 7: Append elements
+        li.appendChild(removeBtn);
+        taskList.appendChild(li);
+
+        // Step 8: Clear input
+        taskInput.value = '';
+    }
+
+    // Step 9: Attach event listeners
+    addButton.addEventListener('click', addTask);
+
+    // Enable Enter key to also add tasks
+    taskInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            addTask();
+        }
+    });
+});
